@@ -7,6 +7,8 @@ import { ShieldCheck, Clock3, Wallet, PlaneTakeoff } from "lucide-react";
 import Image from "next/image";
 import { FlightSearchForm } from "@/features/flights/search-form";
 
+const tomorrow = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
+
 export default function Home() {
   return (
     <div className="relative isolate min-h-[90vh] w-full overflow-x-hidden bg-slate-50">
@@ -49,38 +51,14 @@ export default function Home() {
         <div className="mx-auto mt-12 w-full max-w-3xl">
           <div className="mb-4 flex flex-wrap items-center justify-center gap-2 rounded-xl bg-sky-50 px-4 py-3 text-sm font-medium text-sky-800 shadow">
             <span className="mr-2 text-slate-500">Popular searches:</span>
-            <DummySearchButton origin="JFK" destination="LAX" label="New York → Los Angeles" />
-            <DummySearchButton origin="SFO" destination="ORD" label="San Francisco → Chicago" />
-            <DummySearchButton origin="LAX" destination="SFO" label="Los Angeles → San Francisco" />
+            <QuickSearchChip origin="JFK" destination="LAX" label="New York -> Los Angeles" />
+            <QuickSearchChip origin="SFO" destination="ORD" label="San Francisco -> Chicago" />
+            <QuickSearchChip origin="LAX" destination="SFO" label="Los Angeles -> San Francisco" />
           </div>
           <div className="rounded-3xl bg-white/90 p-6 shadow-2xl backdrop-blur-lg">
             <FlightSearchForm />
           </div>
         </div>
-      // DummySearchButton component for quick search
-      "use client";
-      import { useRouter } from "next/navigation";
-      function DummySearchButton({ origin, destination, label }: { origin: string; destination: string; label: string }) {
-        const router = useRouter();
-        return (
-          <button
-            type="button"
-            className="rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold text-sky-700 hover:bg-sky-200 transition"
-            onClick={() => {
-              const params = new URLSearchParams({
-                origin,
-                destination,
-                departureDate: new Date(Date.now() + 86400000).toISOString().slice(0, 10),
-                passengers: "1",
-                cabinClass: "ECONOMY",
-              });
-              router.push(`/flights/results?${params.toString()}`);
-            }}
-          >
-            {label}
-          </button>
-        );
-      }
       </section>
 
       {/* Feature Highlights */}
@@ -112,5 +90,32 @@ export default function Home() {
       {/* Decorative bottom wave */}
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 -z-10 h-32 w-full bg-gradient-to-t from-sky-100/80 to-transparent" />
     </div>
+  );
+}
+
+function QuickSearchChip({
+  origin,
+  destination,
+  label,
+}: {
+  origin: string;
+  destination: string;
+  label: string;
+}) {
+  const params = new URLSearchParams({
+    origin,
+    destination,
+    departureDate: tomorrow,
+    passengers: "1",
+    cabinClass: "ECONOMY",
+  });
+
+  return (
+    <Link
+      href={`/flights/results?${params.toString()}`}
+      className="rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold text-sky-700 transition hover:bg-sky-200"
+    >
+      {label}
+    </Link>
   );
 }

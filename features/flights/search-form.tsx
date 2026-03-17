@@ -22,6 +22,11 @@ export function FlightSearchForm() {
       params.set("returnDate", returnDate);
     }
 
+    // Save last search to localStorage
+    if (typeof window !== "undefined") {
+      localStorage.setItem("lastFlightSearch", JSON.stringify(Object.fromEntries(params)));
+    }
+
     router.push(`/flights/results?${params.toString()}`);
   }
 

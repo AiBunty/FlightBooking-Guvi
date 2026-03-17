@@ -1,0 +1,20 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1200" fill="#FFF7ED"/>
+  <rect width="1600" height="1200" fill="url(#sky)"/>
+  <rect y="640" width="1600" height="560" fill="#F7C873"/>
+  <path d="M0 696C238 631 488 558 743 562C967 565 1228 647 1600 744V1200H0V696Z" fill="#3A9DBD"/>
+  <path d="M0 775C228 734 431 726 658 772C926 826 1222 941 1600 955V1200H0V775Z" fill="#0B6B8B"/>
+  <path d="M498 1200L732 734H1031L840 1200H498Z" fill="#374151"/>
+  <path d="M646 1200L784 734H824L712 1200H646Z" fill="#F8FAFC" opacity="0.9"/>
+  <circle cx="1299" cy="225" r="94" fill="#FFF0A5"/>
+  <path d="M115 912C279 878 388 858 575 889" stroke="#2B3445" stroke-width="16" stroke-linecap="round" opacity="0.45"/>
+  <text x="96" y="1080" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="76" font-weight="700">Coastal Drive</text>
+  <text x="96" y="1140" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="28">Dummy route-side placeholder image</text>
+  <defs>
+    <linearGradient id="sky" x1="800" y1="0" x2="800" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FCA5A5"/>
+      <stop offset="0.52" stop-color="#FDBA74"/>
+      <stop offset="1" stop-color="#FDE68A"/>
+    </linearGradient>
+  </defs>
+</svg>

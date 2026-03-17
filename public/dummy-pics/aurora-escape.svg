@@ -1,0 +1,27 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1200" fill="#081534"/>
+  <rect width="1600" height="1200" fill="url(#bg)"/>
+  <path d="M0 838C180 760 310 722 477 746C646 770 787 890 958 900C1158 912 1306 766 1600 657V1200H0V838Z" fill="#133B63"/>
+  <path d="M0 922C188 875 352 878 516 919C689 962 831 1056 1011 1042C1184 1028 1336 900 1600 842V1200H0V922Z" fill="#0F6C81"/>
+  <path d="M204 300C432 195 740 170 1065 223C1248 253 1422 300 1600 414" stroke="#72F6DA" stroke-width="28" stroke-linecap="round" opacity="0.72"/>
+  <path d="M80 400C326 292 585 266 875 324C1086 365 1304 449 1517 524" stroke="#95FFC1" stroke-width="20" stroke-linecap="round" opacity="0.55"/>
+  <circle cx="1266" cy="223" r="74" fill="#F3FBFF"/>
+  <g opacity="0.72" fill="#ffffff">
+    <circle cx="210" cy="138" r="4"/>
+    <circle cx="356" cy="198" r="5"/>
+    <circle cx="533" cy="118" r="4"/>
+    <circle cx="703" cy="200" r="4"/>
+    <circle cx="892" cy="128" r="5"/>
+    <circle cx="1054" cy="176" r="4"/>
+    <circle cx="1441" cy="121" r="5"/>
+  </g>
+  <text x="96" y="1080" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="76" font-weight="700">Aurora Escape</text>
+  <text x="96" y="1140" fill="#B9D4E8" font-family="Arial, sans-serif" font-size="28">Dummy travel visual</text>
+  <defs>
+    <linearGradient id="bg" x1="800" y1="0" x2="800" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#091223"/>
+      <stop offset="0.45" stop-color="#11234A"/>
+      <stop offset="1" stop-color="#164C70"/>
+    </linearGradient>
+  </defs>
+</svg>

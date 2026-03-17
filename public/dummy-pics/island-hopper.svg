@@ -1,0 +1,20 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1200" fill="url(#bg)"/>
+  <path d="M0 718C246 680 504 673 792 705C1015 730 1287 799 1600 889V1200H0V718Z" fill="#0EA5E9"/>
+  <path d="M0 888C221 847 396 848 579 880C821 922 1083 1027 1600 1104V1200H0V888Z" fill="#0369A1"/>
+  <ellipse cx="370" cy="838" rx="176" ry="72" fill="#D9F99D"/>
+  <ellipse cx="1127" cy="900" rx="231" ry="82" fill="#BEF264"/>
+  <path d="M349 839L391 705L433 839H349Z" fill="#14532D"/>
+  <path d="M1039 902L1106 672L1173 902H1039Z" fill="#14532D"/>
+  <path d="M1121 902L1193 704L1265 902H1121Z" fill="#166534"/>
+  <circle cx="1276" cy="215" r="96" fill="#FEF9C3"/>
+  <text x="96" y="1080" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="76" font-weight="700">Island Hopper</text>
+  <text x="96" y="1140" fill="#DBF4FF" font-family="Arial, sans-serif" font-size="28">Dummy beach-island placeholder</text>
+  <defs>
+    <linearGradient id="bg" x1="800" y1="0" x2="800" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F766E"/>
+      <stop offset="0.48" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#BAE6FD"/>
+    </linearGradient>
+  </defs>
+</svg>

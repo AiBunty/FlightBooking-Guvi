@@ -1,0 +1,18 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1200" fill="url(#bg)"/>
+  <path d="M0 713C177 612 369 555 596 582C853 613 989 753 1236 762C1364 767 1480 744 1600 710V1200H0V713Z" fill="#E78933"/>
+  <path d="M0 868C244 743 499 715 737 777C980 840 1188 962 1600 997V1200H0V868Z" fill="#D06A23"/>
+  <path d="M0 979C205 915 465 897 706 962C959 1029 1221 1142 1600 1136V1200H0V979Z" fill="#A64A1D"/>
+  <circle cx="1265" cy="247" r="112" fill="#FFF2C2"/>
+  <path d="M271 470C338 438 420 435 502 456" stroke="#FFF7D6" stroke-width="12" stroke-linecap="round" opacity="0.6"/>
+  <path d="M882 414C955 374 1044 365 1122 384" stroke="#FFF7D6" stroke-width="12" stroke-linecap="round" opacity="0.6"/>
+  <text x="96" y="1080" fill="#FFF7ED" font-family="Arial, sans-serif" font-size="76" font-weight="700">Desert Dunes</text>
+  <text x="96" y="1140" fill="#FFE7C2" font-family="Arial, sans-serif" font-size="28">Dummy warm-weather placeholder</text>
+  <defs>
+    <linearGradient id="bg" x1="800" y1="0" x2="800" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C2D12"/>
+      <stop offset="0.46" stop-color="#C2410C"/>
+      <stop offset="1" stop-color="#FB923C"/>
+    </linearGradient>
+  </defs>
+</svg>

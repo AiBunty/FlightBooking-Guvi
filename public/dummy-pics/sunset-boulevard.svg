@@ -1,0 +1,17 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1200" fill="url(#bg)"/>
+  <path d="M0 794C195 731 416 696 633 722C873 750 1117 860 1600 1002V1200H0V794Z" fill="#C2410C"/>
+  <path d="M0 925C225 879 422 880 612 915C873 963 1115 1045 1600 1124V1200H0V925Z" fill="#7C2D12"/>
+  <path d="M563 1200L737 729H874L749 1200H563Z" fill="#2B3445"/>
+  <path d="M719 1200L803 729H826L760 1200H719Z" fill="#FED7AA"/>
+  <circle cx="1274" cy="241" r="112" fill="#FDE68A"/>
+  <text x="96" y="1080" fill="#FFF7ED" font-family="Arial, sans-serif" font-size="76" font-weight="700">Sunset Boulevard</text>
+  <text x="96" y="1140" fill="#FED7AA" font-family="Arial, sans-serif" font-size="28">Dummy golden-hour route visual</text>
+  <defs>
+    <linearGradient id="bg" x1="800" y1="0" x2="800" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7E22CE"/>
+      <stop offset="0.48" stop-color="#F97316"/>
+      <stop offset="1" stop-color="#FDBA74"/>
+    </linearGradient>
+  </defs>
+</svg>

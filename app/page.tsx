@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { FlightSearchForm } from "@/features/flights/search-form";
 import { HolidayDestinationCarousel } from "@/components/home/holiday-destination-carousel";
+import { DummyPhotoGallery } from "@/components/home/dummy-photo-gallery";
 
 const defaultDepartureDate = "2026-03-18";
 
@@ -99,6 +100,7 @@ export default function Home() {
       </section>
 
       <HolidayDestinationCarousel />
+      <DummyPhotoGallery />
 
       <section className="mx-auto mt-14 w-full max-w-7xl px-4">
         <div className="mb-6 flex items-end justify-between gap-4">

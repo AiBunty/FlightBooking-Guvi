@@ -1,0 +1,27 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1200" fill="url(#bg)"/>
+  <path d="M0 826C172 730 351 653 548 677C760 703 939 861 1127 878C1275 891 1436 843 1600 773V1200H0V826Z" fill="#22543D"/>
+  <path d="M0 935C247 860 464 858 679 921C914 989 1178 1091 1600 1110V1200H0V935Z" fill="#163928"/>
+  <g fill="#2F855A">
+    <path d="M238 837L331 565L424 837H238Z"/>
+    <path d="M438 866L552 519L666 866H438Z"/>
+    <path d="M744 851L852 488L960 851H744Z"/>
+    <path d="M1041 876L1150 566L1259 876H1041Z"/>
+  </g>
+  <g fill="#4D7C0F">
+    <rect x="321" y="837" width="20" height="153"/>
+    <rect x="542" y="866" width="24" height="134"/>
+    <rect x="842" y="851" width="22" height="142"/>
+    <rect x="1140" y="876" width="22" height="125"/>
+  </g>
+  <circle cx="1273" cy="233" r="90" fill="#F0FDF4"/>
+  <text x="96" y="1080" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="76" font-weight="700">Forest Trail</text>
+  <text x="96" y="1140" fill="#D1FAE5" font-family="Arial, sans-serif" font-size="28">Dummy nature-themed picture</text>
+  <defs>
+    <linearGradient id="bg" x1="800" y1="0" x2="800" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#052E16"/>
+      <stop offset="0.55" stop-color="#166534"/>
+      <stop offset="1" stop-color="#65A30D"/>
+    </linearGradient>
+  </defs>
+</svg>

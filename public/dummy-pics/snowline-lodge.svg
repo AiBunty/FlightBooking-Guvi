@@ -1,0 +1,20 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1200" fill="url(#bg)"/>
+  <path d="M0 749C230 654 449 601 679 631C882 658 1089 776 1600 899V1200H0V749Z" fill="#93C5FD"/>
+  <path d="M0 904C223 855 421 858 635 903C886 957 1128 1044 1600 1124V1200H0V904Z" fill="#2563EB"/>
+  <path d="M112 710L347 349L582 710H112Z" fill="#F8FAFC"/>
+  <path d="M493 765L752 305L1011 765H493Z" fill="#E2E8F0"/>
+  <path d="M914 707L1118 392L1322 707H914Z" fill="#F8FAFC"/>
+  <rect x="694" y="762" width="114" height="118" fill="#92400E"/>
+  <path d="M626 850H876L949 973H553L626 850Z" fill="#B45309"/>
+  <circle cx="1297" cy="230" r="90" fill="#FEFCE8"/>
+  <text x="96" y="1080" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="76" font-weight="700">Snowline Lodge</text>
+  <text x="96" y="1140" fill="#DBEAFE" font-family="Arial, sans-serif" font-size="28">Dummy winter destination image</text>
+  <defs>
+    <linearGradient id="bg" x1="800" y1="0" x2="800" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E3A8A"/>
+      <stop offset="0.55" stop-color="#60A5FA"/>
+      <stop offset="1" stop-color="#E0F2FE"/>
+    </linearGradient>
+  </defs>
+</svg>

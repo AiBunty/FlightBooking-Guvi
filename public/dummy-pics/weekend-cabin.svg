@@ -1,0 +1,22 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1200" fill="url(#bg)"/>
+  <path d="M0 798C214 713 443 663 672 687C919 714 1137 844 1600 964V1200H0V798Z" fill="#65A30D"/>
+  <path d="M0 930C252 876 459 874 671 918C926 971 1161 1073 1600 1127V1200H0V930Z" fill="#3F6212"/>
+  <path d="M560 845H973V980H560V845Z" fill="#92400E"/>
+  <path d="M515 845L766 617L1018 845H515Z" fill="#78350F"/>
+  <rect x="729" y="887" width="77" height="93" fill="#451A03"/>
+  <rect x="613" y="883" width="62" height="48" fill="#FDE68A"/>
+  <rect x="857" y="883" width="62" height="48" fill="#FDE68A"/>
+  <circle cx="1285" cy="223" r="92" fill="#FEF9C3"/>
+  <path d="M262 885L335 666L408 885H262Z" fill="#166534"/>
+  <path d="M1116 883L1185 693L1254 883H1116Z" fill="#166534"/>
+  <text x="96" y="1080" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="76" font-weight="700">Weekend Cabin</text>
+  <text x="96" y="1140" fill="#ECFCCB" font-family="Arial, sans-serif" font-size="28">Dummy retreat placeholder image</text>
+  <defs>
+    <linearGradient id="bg" x1="800" y1="0" x2="800" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#14532D"/>
+      <stop offset="0.55" stop-color="#4D7C0F"/>
+      <stop offset="1" stop-color="#BEF264"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,20 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1200" fill="url(#sky)"/>
+  <path d="M0 784C231 720 416 697 652 728C864 755 1165 854 1600 1010V1200H0V784Z" fill="#1D4ED8"/>
+  <path d="M507 1200L712 683H899L744 1200H507Z" fill="#1F2937"/>
+  <path d="M693 1200L794 683H816L733 1200H693Z" fill="#E2E8F0"/>
+  <circle cx="1298" cy="214" r="88" fill="#F8FAFC"/>
+  <g fill="#F59E0B" opacity="0.85">
+    <circle cx="667" cy="987" r="8"/><circle cx="694" cy="928" r="7"/><circle cx="723" cy="870" r="7"/><circle cx="748" cy="810" r="7"/><circle cx="772" cy="754" r="7"/>
+    <circle cx="852" cy="987" r="8"/><circle cx="838" cy="928" r="7"/><circle cx="824" cy="870" r="7"/><circle cx="810" cy="810" r="7"/><circle cx="796" cy="754" r="7"/>
+  </g>
+  <text x="96" y="1080" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="76" font-weight="700">Runway Glow</text>
+  <text x="96" y="1140" fill="#DBEAFE" font-family="Arial, sans-serif" font-size="28">Dummy airport-inspired picture</text>
+  <defs>
+    <linearGradient id="sky" x1="800" y1="0" x2="800" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#172554"/>
+      <stop offset="0.5" stop-color="#1D4ED8"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+  </defs>
+</svg>

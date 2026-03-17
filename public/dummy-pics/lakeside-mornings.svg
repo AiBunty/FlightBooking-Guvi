@@ -1,0 +1,18 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1200" fill="url(#bg)"/>
+  <path d="M0 753C202 694 404 655 631 679C885 706 1131 840 1600 926V1200H0V753Z" fill="#60A5FA"/>
+  <path d="M0 879C207 840 408 842 611 882C873 933 1120 1030 1600 1108V1200H0V879Z" fill="#1D4ED8"/>
+  <path d="M0 642C226 579 462 517 684 522C907 527 1172 602 1600 708V785C1226 702 963 667 693 677C431 687 217 743 0 816V642Z" fill="#A3E635"/>
+  <circle cx="1289" cy="232" r="98" fill="#FFF7AE"/>
+  <path d="M255 873C333 791 413 708 493 625" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" opacity="0.52"/>
+  <path d="M334 873C404 798 477 718 550 645" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" opacity="0.52"/>
+  <text x="96" y="1080" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="76" font-weight="700">Lakeside Mornings</text>
+  <text x="96" y="1140" fill="#DBEAFE" font-family="Arial, sans-serif" font-size="28">Dummy calm-water scene</text>
+  <defs>
+    <linearGradient id="bg" x1="800" y1="0" x2="800" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E3A8A"/>
+      <stop offset="0.52" stop-color="#60A5FA"/>
+      <stop offset="1" stop-color="#BFDBFE"/>
+    </linearGradient>
+  </defs>
+</svg>

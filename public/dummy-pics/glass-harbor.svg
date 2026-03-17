@@ -1,0 +1,18 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1200" fill="url(#bg)"/>
+  <path d="M0 762C237 696 410 687 621 731C865 782 1087 892 1600 980V1200H0V762Z" fill="#0F766E"/>
+  <path d="M0 868C262 829 465 839 670 892C882 947 1121 1056 1600 1103V1200H0V868Z" fill="#115E59"/>
+  <path d="M235 744L421 408L604 744H235Z" fill="#CFFAFE" opacity="0.88"/>
+  <path d="M565 744L786 315L1007 744H565Z" fill="#E0F2FE" opacity="0.92"/>
+  <path d="M941 744L1111 459L1279 744H941Z" fill="#BAE6FD" opacity="0.84"/>
+  <circle cx="1288" cy="203" r="90" fill="#FFF8D4"/>
+  <text x="96" y="1080" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="76" font-weight="700">Glass Harbor</text>
+  <text x="96" y="1140" fill="#D5F5FF" font-family="Arial, sans-serif" font-size="28">Dummy waterfront city image</text>
+  <defs>
+    <linearGradient id="bg" x1="800" y1="0" x2="800" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#083344"/>
+      <stop offset="0.46" stop-color="#0E7490"/>
+      <stop offset="1" stop-color="#67E8F9"/>
+    </linearGradient>
+  </defs>
+</svg>

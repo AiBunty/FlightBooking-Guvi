@@ -1,11 +1,21 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { ResultCard } from "@/features/flights/result-card";
 import { EmptyState } from "@/components/ui/empty-state";
 import { DUMMY_FLIGHTS } from "@/features/flights/dummy-flights";
 
-function filterFlights(query) {
+type FlightQuery = {
+  origin?: string;
+  destination?: string;
+  departureDate?: string;
+  passengers?: string;
+  cabinClass?: string;
+  returnDate?: string;
+};
+
+function filterFlights(query: FlightQuery) {
   // Simple filter: match origin, destination, and date
   return DUMMY_FLIGHTS.filter((f) => {
     if (
@@ -25,23 +35,13 @@ function filterFlights(query) {
 }
 
 export default function ClientResults() {
-  const [flights, setFlights] = useState([]);
-  const [query, setQuery] = useState({});
+  const searchParams = useSearchParams();
+  const query: FlightQuery = Object.fromEntries(searchParams.entries());
+  const flights = filterFlights(query);
 
   useEffect(() => {
-    // Get last search from localStorage or URL
-    let params;
     if (typeof window !== "undefined") {
-      const url = new URL(window.location.href);
-      params = Object.fromEntries(url.searchParams.entries());
-      setQuery(params);
-      localStorage.setItem("lastFlightSearch", JSON.stringify(params));
-    }
-  }, []);
-
-  useEffect(() => {
-    if (Object.keys(query).length > 0) {
-      setFlights(filterFlights(query));
+      localStorage.setItem("lastFlightSearch", JSON.stringify(query));
     }
   }, [query]);
 

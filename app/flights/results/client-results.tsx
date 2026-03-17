@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { ResultCard } from "@/features/flights/result-card";
 import { EmptyState } from "@/components/ui/empty-state";
-import { DUMMY_FLIGHTS } from "@/features/flights/dummy-flights";
+import { DUMMY_FLIGHTS, matchesLocationQuery } from "@/features/flights/dummy-flights";
 
 type FlightQuery = {
   origin?: string;
@@ -16,16 +16,13 @@ type FlightQuery = {
 };
 
 function filterFlights(query: FlightQuery) {
-  // Simple filter: match origin, destination, and date
   return DUMMY_FLIGHTS.filter((f) => {
-    if (
-      query.origin && f.origin.code.toUpperCase() !== query.origin.toUpperCase()
-    )
+    if (!matchesLocationQuery(query.origin, f.origin)) {
       return false;
-    if (
-      query.destination && f.destination.code.toUpperCase() !== query.destination.toUpperCase()
-    )
+    }
+    if (!matchesLocationQuery(query.destination, f.destination)) {
       return false;
+    }
     if (query.departureDate) {
       const flightDate = f.departureTime.slice(0, 10);
       if (flightDate !== query.departureDate) return false;

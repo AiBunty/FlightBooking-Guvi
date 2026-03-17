@@ -4,15 +4,21 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { DUMMY_LOCATIONS, resolveLocationCode } from "@/features/flights/dummy-flights";
+
+const defaultDepartureDate = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
 
 export function FlightSearchForm() {
   const router = useRouter();
 
   function onSubmit(formData: FormData) {
+    const origin = resolveLocationCode(String(formData.get("origin") ?? ""));
+    const destination = resolveLocationCode(String(formData.get("destination") ?? ""));
+
     const params = new URLSearchParams({
-      origin: String(formData.get("origin") ?? ""),
-      destination: String(formData.get("destination") ?? ""),
-      departureDate: String(formData.get("departureDate") ?? ""),
+      origin,
+      destination,
+      departureDate: String(formData.get("departureDate") ?? defaultDepartureDate),
       passengers: String(formData.get("passengers") ?? "1"),
       cabinClass: String(formData.get("cabinClass") ?? "ECONOMY"),
     });
@@ -33,9 +39,21 @@ export function FlightSearchForm() {
   return (
     <Card>
       <form action={onSubmit} className="grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
-        <Input name="origin" placeholder="Origin (e.g. JFK)" required maxLength={3} />
-        <Input name="destination" placeholder="Destination (e.g. LAX)" required maxLength={3} />
-        <Input name="departureDate" type="date" required />
+        <Input
+          name="origin"
+          placeholder="Origin (e.g. New York or JFK)"
+          required
+          defaultValue="JFK"
+          list="dummy-locations"
+        />
+        <Input
+          name="destination"
+          placeholder="Destination (e.g. Los Angeles or LAX)"
+          required
+          defaultValue="LAX"
+          list="dummy-locations"
+        />
+        <Input name="departureDate" type="date" required defaultValue={defaultDepartureDate} />
         <Input name="returnDate" type="date" />
         <Input name="passengers" type="number" min={1} max={9} defaultValue={1} required />
         <select
@@ -50,6 +68,11 @@ export function FlightSearchForm() {
         <div className="sm:col-span-2 lg:col-span-6">
           <Button className="w-full sm:w-auto">Find flights</Button>
         </div>
+        <datalist id="dummy-locations">
+          {DUMMY_LOCATIONS.map((location) => (
+            <option key={location.code} value={location.label} />
+          ))}
+        </datalist>
       </form>
     </Card>
   );

@@ -1,4 +1,10 @@
 // Dummy flight data for local search
+export type DummyLocation = {
+  code: string;
+  city: string;
+  label: string;
+};
+
 export const DUMMY_FLIGHTS = [
   {
     id: "1",
@@ -34,3 +40,41 @@ export const DUMMY_FLIGHTS = [
     destination: { code: "SFO", city: "San Francisco" },
   },
 ];
+
+export const DUMMY_LOCATIONS: DummyLocation[] = [
+  { code: "JFK", city: "New York", label: "New York (JFK)" },
+  { code: "LAX", city: "Los Angeles", label: "Los Angeles (LAX)" },
+  { code: "SFO", city: "San Francisco", label: "San Francisco (SFO)" },
+  { code: "ORD", city: "Chicago", label: "Chicago (ORD)" },
+];
+
+export function resolveLocationCode(value: string) {
+  const normalized = value.trim().toLowerCase();
+  if (!normalized) {
+    return "";
+  }
+
+  const match = DUMMY_LOCATIONS.find((location) => {
+    return (
+      location.code.toLowerCase() === normalized ||
+      location.city.toLowerCase() === normalized ||
+      location.label.toLowerCase() === normalized
+    );
+  });
+
+  return match?.code ?? value.trim().toUpperCase();
+}
+
+export function matchesLocationQuery(query: string | undefined, location: { code: string; city: string }) {
+  if (!query) {
+    return true;
+  }
+
+  const normalized = query.trim().toLowerCase();
+  return (
+    location.code.toLowerCase() === normalized ||
+    location.city.toLowerCase() === normalized ||
+    location.code.toLowerCase().includes(normalized) ||
+    location.city.toLowerCase().includes(normalized)
+  );
+}

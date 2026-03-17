@@ -1,94 +1,177 @@
-
-
 import Link from "next/link";
+import { ArrowRight, Clock3, ShieldCheck, Sparkles, SunMedium } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ShieldCheck, Clock3, Wallet, PlaneTakeoff } from "lucide-react";
-import Image from "next/image";
 import { FlightSearchForm } from "@/features/flights/search-form";
+import { HolidayDestinationCarousel } from "@/components/home/holiday-destination-carousel";
 
-const tomorrow = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
+const defaultDepartureDate = "2026-03-18";
 
 export default function Home() {
   return (
-    <div className="relative isolate min-h-[90vh] w-full overflow-x-hidden bg-slate-50">
-      {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center px-4 pt-10 pb-24 sm:pt-20 sm:pb-32">
-        {/* Background image overlay */}
-        <div className="pointer-events-none absolute inset-0 -z-10 h-full w-full bg-[url('/hero-bg.jpg')] bg-cover bg-center opacity-60" style={{backgroundBlendMode:'multiply'}} />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-sky-900/80 via-sky-800/70 to-cyan-700/60" />
+    <div className="overflow-x-hidden">
+      <section className="relative px-4 pb-12 pt-8 sm:pt-12">
+        <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[520px] bg-linear-to-b from-orange-100/80 via-orange-50/55 to-transparent" />
+        <div className="mx-auto grid w-full max-w-7xl gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+          <div className="pt-4">
+            <div className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-white/85 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-orange-700 shadow-sm backdrop-blur-sm">
+              <Sparkles className="h-3.5 w-3.5" />
+              Flight booking, simplified
+            </div>
+            <h1 className="mt-5 max-w-3xl font-[family:var(--font-space-grotesk)] text-4xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-6xl">
+              Search fast, compare cleanly, and book with a retail travel feel.
+            </h1>
+            <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+              The homepage now behaves more like a modern OTA shell: clear search first, strong route shortcuts, warmer accent colors, and less dashboard-looking chrome.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <Link href="/flights/search">
+                <Button className="h-12 px-6 text-base">Start searching</Button>
+              </Link>
+              <Link href="/dashboard/bookings">
+                <Button variant="secondary" className="h-12 px-6 text-base">
+                  View trips
+                </Button>
+              </Link>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <QuickSearchChip origin="JFK" destination="LAX" label="New York to Los Angeles" />
+              <QuickSearchChip origin="SFO" destination="ORD" label="San Francisco to Chicago" />
+              <QuickSearchChip origin="LAX" destination="SFO" label="Los Angeles to San Francisco" />
+            </div>
+          </div>
 
-        <p className="mb-4 mt-4 rounded-full bg-white/20 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-white shadow-sm backdrop-blur-sm">
-          Book your next adventure
-        </p>
-        <h1 className="max-w-3xl text-center text-4xl font-extrabold leading-tight tracking-tight text-white drop-shadow-lg sm:text-6xl">
-          Effortless Flight Booking<br className="hidden sm:inline" /> for Modern Travelers
-        </h1>
-        <p className="mt-6 max-w-xl text-center text-base text-sky-100 sm:text-lg">
-          Discover, compare, and book flights worldwide. Enjoy seamless checkout, real-time updates, and a dashboard built for you.
-        </p>
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <Link href="/flights/search">
-            <Button className="h-12 w-44 text-lg shadow-xl transition hover:scale-105 hover:bg-sky-700">
-              Search Flights
-            </Button>
-          </Link>
-          <Link href="/auth/sign-up">
-            <Button variant="secondary" className="h-12 w-44 text-lg border border-white/60 bg-white/80 text-sky-800 shadow-xl transition hover:scale-105 hover:bg-white">
-              Create Account
-            </Button>
-          </Link>
+          <Card className="overflow-hidden border border-orange-100 bg-white/90 p-0">
+            <div className="grid gap-5 bg-linear-to-br from-slate-900 via-slate-900 to-slate-800 p-6 text-white sm:grid-cols-2">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-orange-200">Weekend ready</p>
+                <h2 className="mt-3 font-[family:var(--font-space-grotesk)] text-3xl font-semibold">Save time on the hunt.</h2>
+                <p className="mt-3 text-sm leading-6 text-slate-300">
+                  Cleaner search, compact result cards, and quick route shortcuts from the first screen.
+                </p>
+              </div>
+              <div className="grid gap-3">
+                <div className="rounded-[24px] bg-white/10 p-4 backdrop-blur-sm">
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-orange-200">Today&apos;s spotlight</p>
+                  <p className="mt-2 text-2xl font-semibold">JFK to LAX</p>
+                  <p className="mt-1 text-sm text-slate-300">Non-stop demo fares starting from $320</p>
+                </div>
+                <div className="rounded-[24px] bg-white/8 p-4 text-sm text-slate-200 backdrop-blur-sm">
+                  Better hierarchy than the previous landing page: search comes first, extras come second.
+                </div>
+              </div>
+            </div>
+          </Card>
         </div>
 
-        {/* Dummy flight images row */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
-          <Image src="/dummy-flight.svg" alt="Flight 1" width={120} height={120} className="rounded-2xl shadow-md bg-white/80" />
-          <Image src="/dummy-flight.svg" alt="Flight 2" width={120} height={120} className="rounded-2xl shadow-md bg-white/80" />
-          <Image src="/dummy-flight.svg" alt="Flight 3" width={120} height={120} className="rounded-2xl shadow-md bg-white/80" />
-        </div>
-
-        {/* Dummy search suggestions */}
-        <div className="mx-auto mt-12 w-full max-w-3xl">
-          <div className="mb-4 flex flex-wrap items-center justify-center gap-2 rounded-xl bg-sky-50 px-4 py-3 text-sm font-medium text-sky-800 shadow">
-            <span className="mr-2 text-slate-500">Popular searches:</span>
-            <QuickSearchChip origin="JFK" destination="LAX" label="New York -> Los Angeles" />
-            <QuickSearchChip origin="SFO" destination="ORD" label="San Francisco -> Chicago" />
-            <QuickSearchChip origin="LAX" destination="SFO" label="Los Angeles -> San Francisco" />
+        <div className="mx-auto mt-8 w-full max-w-7xl">
+          <div className="mb-4 flex flex-wrap gap-2">
+            <span className="rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white">Flights</span>
+            <span className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-500 shadow-sm">Hotels</span>
+            <span className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-500 shadow-sm">Trains</span>
+            <span className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-500 shadow-sm">Cabs</span>
           </div>
-          <div className="rounded-3xl bg-white/90 p-6 shadow-2xl backdrop-blur-lg">
-            <FlightSearchForm />
-          </div>
+          <FlightSearchForm />
         </div>
       </section>
 
-      {/* Feature Highlights */}
-      <section className="relative z-10 mx-auto -mt-20 w-full max-w-6xl px-4">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <Card className="group flex flex-col items-center space-y-3 border-0 bg-gradient-to-br from-white/90 to-sky-50 p-7 shadow-xl transition hover:scale-105 hover:shadow-2xl">
-            <span className="flex h-12 w-12 items-center justify-center rounded-full bg-sky-100 group-hover:bg-sky-200 transition"><PlaneTakeoff className="h-7 w-7 text-sky-700" /></span>
-            <h2 className="text-lg font-semibold text-slate-900">Extensive Inventory</h2>
-            <p className="text-center text-sm text-slate-600">Thousands of routes, real-time availability, and global coverage.</p>
+      <section className="mx-auto w-full max-w-7xl px-4">
+        <div className="grid gap-4 md:grid-cols-3">
+          <Card className="border-orange-100 bg-white/90 p-6">
+            <SunMedium className="h-9 w-9 rounded-2xl bg-orange-50 p-2 text-orange-600" />
+            <p className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-orange-700">Seasonal picks</p>
+            <h2 className="mt-2 text-xl font-semibold text-slate-900">Short-break routes for this week</h2>
+            <p className="mt-2 text-sm leading-6 text-slate-600">Warm palette, simple cards, and route-led merchandising instead of dashboard boxes.</p>
           </Card>
-          <Card className="group flex flex-col items-center space-y-3 border-0 bg-gradient-to-br from-white/90 to-sky-50 p-7 shadow-xl transition hover:scale-105 hover:shadow-2xl">
-            <span className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100 group-hover:bg-emerald-200 transition"><ShieldCheck className="h-7 w-7 text-emerald-700" /></span>
-            <h2 className="text-lg font-semibold text-slate-900">Secure Payments</h2>
-            <p className="text-center text-sm text-slate-600">Stripe-powered checkout, fraud protection, and instant confirmation.</p>
+          <Card className="border-emerald-100 bg-white/90 p-6">
+            <ShieldCheck className="h-9 w-9 rounded-2xl bg-emerald-50 p-2 text-emerald-600" />
+            <p className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">Secure checkout</p>
+            <h2 className="mt-2 text-xl font-semibold text-slate-900">Pay with confidence</h2>
+            <p className="mt-2 text-sm leading-6 text-slate-600">The interface now feels consumer-facing while still retaining the existing booking workflow underneath.</p>
           </Card>
-          <Card className="group flex flex-col items-center space-y-3 border-0 bg-gradient-to-br from-white/90 to-sky-50 p-7 shadow-xl transition hover:scale-105 hover:shadow-2xl">
-            <span className="flex h-12 w-12 items-center justify-center rounded-full bg-cyan-100 group-hover:bg-cyan-200 transition"><Clock3 className="h-7 w-7 text-cyan-700" /></span>
-            <h2 className="text-lg font-semibold text-slate-900">Lightning Fast</h2>
-            <p className="text-center text-sm text-slate-600">Book in minutes with our streamlined, multi-step booking flow.</p>
-          </Card>
-          <Card className="group flex flex-col items-center space-y-3 border-0 bg-gradient-to-br from-white/90 to-sky-50 p-7 shadow-xl transition hover:scale-105 hover:shadow-2xl">
-            <span className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 group-hover:bg-amber-200 transition"><Wallet className="h-7 w-7 text-amber-700" /></span>
-            <h2 className="text-lg font-semibold text-slate-900">Travel Dashboard</h2>
-            <p className="text-center text-sm text-slate-600">Manage bookings, get notifications, and access support anytime.</p>
+          <Card className="border-sky-100 bg-white/90 p-6">
+            <Clock3 className="h-9 w-9 rounded-2xl bg-sky-50 p-2 text-sky-600" />
+            <p className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-sky-700">Fast booking</p>
+            <h2 className="mt-2 text-xl font-semibold text-slate-900">Less scrolling, faster decisions</h2>
+            <p className="mt-2 text-sm leading-6 text-slate-600">Search, compare, and move to details with less visual noise across the main funnel.</p>
           </Card>
         </div>
       </section>
 
-      {/* Decorative bottom wave */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 -z-10 h-32 w-full bg-gradient-to-t from-sky-100/80 to-transparent" />
+      <HolidayDestinationCarousel />
+
+      <section className="mx-auto mt-14 w-full max-w-7xl px-4">
+        <div className="mb-6 flex items-end justify-between gap-4">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-orange-700">Popular right now</p>
+            <h2 className="mt-2 font-[family:var(--font-space-grotesk)] text-3xl font-semibold text-slate-900">Cards that sell the next trip</h2>
+          </div>
+          <Link href="/flights/search" className="hidden items-center gap-2 text-sm font-semibold text-orange-600 md:flex">
+            Explore more routes
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+
+        <div className="grid gap-4 lg:grid-cols-3">
+          {[
+            {
+              title: "Red-eye ready",
+              copy: "Late departures with clean result cards and less clutter around fare decisions.",
+              tone: "from-orange-500 to-orange-600",
+            },
+            {
+              title: "City switch weekends",
+              copy: "Compact one-way search works well for short hops and quick booking intent.",
+              tone: "from-slate-900 to-slate-700",
+            },
+            {
+              title: "Premium cabin browsing",
+              copy: "Cabin selector and traveller inputs sit inside the same booking shell for faster edits.",
+              tone: "from-emerald-500 to-emerald-600",
+            },
+          ].map((offer) => (
+            <Card key={offer.title} className="overflow-hidden border-0 p-0">
+              <div className={`h-40 bg-linear-to-br ${offer.tone} p-6 text-white`}>
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/75">Featured</p>
+                <h3 className="mt-4 font-[family:var(--font-space-grotesk)] text-2xl font-semibold">{offer.title}</h3>
+              </div>
+              <div className="p-6">
+                <p className="text-sm leading-6 text-slate-600">{offer.copy}</p>
+                <Link href="/flights/search" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-orange-600">
+                  Search flights
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto mt-14 w-full max-w-7xl px-4 pb-6">
+        <Card className="grid gap-6 border-orange-100 bg-linear-to-r from-orange-50 via-white to-white p-6 lg:grid-cols-[1fr_0.75fr] lg:items-center">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-orange-700">Why this redesign works</p>
+            <h2 className="mt-2 font-[family:var(--font-space-grotesk)] text-3xl font-semibold text-slate-900">It behaves more like a travel marketplace and less like a SaaS dashboard.</h2>
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600">
+              The new UI emphasizes the booking intent immediately: route entry, trip type, fare discovery, and quick next actions. That is the part Cleartrip-like interfaces typically get right.
+            </p>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-3">
+            <div className="rounded-[24px] bg-white px-4 py-5 shadow-sm">
+              <p className="text-2xl font-semibold text-slate-900">01</p>
+              <p className="mt-2 text-sm font-semibold text-slate-800">Warmer consumer palette</p>
+            </div>
+            <div className="rounded-[24px] bg-white px-4 py-5 shadow-sm">
+              <p className="text-2xl font-semibold text-slate-900">02</p>
+              <p className="mt-2 text-sm font-semibold text-slate-800">Search-first home screen</p>
+            </div>
+            <div className="rounded-[24px] bg-white px-4 py-5 shadow-sm">
+              <p className="text-2xl font-semibold text-slate-900">03</p>
+              <p className="mt-2 text-sm font-semibold text-slate-800">Retail-style result cards</p>
+            </div>
+          </div>
+        </Card>
+      </section>
     </div>
   );
 }
@@ -105,7 +188,7 @@ function QuickSearchChip({
   const params = new URLSearchParams({
     origin,
     destination,
-    departureDate: tomorrow,
+    departureDate: defaultDepartureDate,
     passengers: "1",
     cabinClass: "ECONOMY",
   });
@@ -113,7 +196,7 @@ function QuickSearchChip({
   return (
     <Link
       href={`/flights/results?${params.toString()}`}
-      className="rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold text-sky-700 transition hover:bg-sky-200"
+      className="rounded-full border border-orange-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-orange-300 hover:text-orange-600"
     >
       {label}
     </Link>

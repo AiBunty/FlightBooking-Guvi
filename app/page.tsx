@@ -5,8 +5,9 @@ import { Button } from "@/components/ui/button";
 import { FlightSearchForm } from "@/features/flights/search-form";
 import { HolidayDestinationCarousel } from "@/components/home/holiday-destination-carousel";
 import { DummyPhotoGallery } from "@/components/home/dummy-photo-gallery";
+import { getDefaultDepartureDate } from "@/features/flights/demo-flight-data";
 
-const defaultDepartureDate = "2026-03-18";
+const defaultDepartureDate = getDefaultDepartureDate(7);
 
 export default function Home() {
   return (
@@ -23,13 +24,13 @@ export default function Home() {
               Search fast, compare cleanly, and book with a retail travel feel.
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-              The homepage now behaves more like a modern OTA shell: clear search first, strong route shortcuts, warmer accent colors, and less dashboard-looking chrome.
+              Search from a locally cached airport database, see a realistic demo search pass, and keep demo bookings saved in the browser after refresh.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Link href="/flights/search">
                 <Button className="h-12 px-6 text-base">Start searching</Button>
               </Link>
-              <Link href="/dashboard/bookings">
+              <Link href="/bookings/demo">
                 <Button variant="secondary" className="h-12 px-6 text-base">
                   View trips
                 </Button>
@@ -48,17 +49,17 @@ export default function Home() {
                 <p className="text-xs font-semibold uppercase tracking-[0.25em] text-orange-200">Weekend ready</p>
                 <h2 className="mt-3 font-[family:var(--font-space-grotesk)] text-3xl font-semibold">Save time on the hunt.</h2>
                 <p className="mt-3 text-sm leading-6 text-slate-300">
-                  Cleaner search, compact result cards, and quick route shortcuts from the first screen.
+                  Faster airport lookup, real-photo merchandising, and a demo booking flow that no longer depends on the server database.
                 </p>
               </div>
               <div className="grid gap-3">
                 <div className="rounded-[24px] bg-white/10 p-4 backdrop-blur-sm">
                   <p className="text-xs font-semibold uppercase tracking-[0.22em] text-orange-200">Today&apos;s spotlight</p>
                   <p className="mt-2 text-2xl font-semibold">JFK to LAX</p>
-                  <p className="mt-1 text-sm text-slate-300">Non-stop demo fares starting from $320</p>
+                  <p className="mt-1 text-sm text-slate-300">Generated non-stop demo fares from the cached airport network</p>
                 </div>
                 <div className="rounded-[24px] bg-white/8 p-4 text-sm text-slate-200 backdrop-blur-sm">
-                  Better hierarchy than the previous landing page: search comes first, extras come second.
+                  Search first, compare second, and finish booking without losing the itinerary on refresh.
                 </div>
               </div>
             </div>
@@ -82,19 +83,19 @@ export default function Home() {
             <SunMedium className="h-9 w-9 rounded-2xl bg-orange-50 p-2 text-orange-600" />
             <p className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-orange-700">Seasonal picks</p>
             <h2 className="mt-2 text-xl font-semibold text-slate-900">Short-break routes for this week</h2>
-            <p className="mt-2 text-sm leading-6 text-slate-600">Warm palette, simple cards, and route-led merchandising instead of dashboard boxes.</p>
+            <p className="mt-2 text-sm leading-6 text-slate-600">Real destination imagery and route-led merchandising instead of abstract art blocks.</p>
           </Card>
           <Card className="border-emerald-100 bg-white/90 p-6">
             <ShieldCheck className="h-9 w-9 rounded-2xl bg-emerald-50 p-2 text-emerald-600" />
-            <p className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">Secure checkout</p>
-            <h2 className="mt-2 text-xl font-semibold text-slate-900">Pay with confidence</h2>
-            <p className="mt-2 text-sm leading-6 text-slate-600">The interface now feels consumer-facing while still retaining the existing booking workflow underneath.</p>
+            <p className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">Demo checkout</p>
+            <h2 className="mt-2 text-xl font-semibold text-slate-900">Book without losing state</h2>
+            <p className="mt-2 text-sm leading-6 text-slate-600">Demo checkout stores the itinerary locally, so confirmation persists across reloads without hitting Stripe.</p>
           </Card>
           <Card className="border-sky-100 bg-white/90 p-6">
             <Clock3 className="h-9 w-9 rounded-2xl bg-sky-50 p-2 text-sky-600" />
             <p className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-sky-700">Fast booking</p>
             <h2 className="mt-2 text-xl font-semibold text-slate-900">Less scrolling, faster decisions</h2>
-            <p className="mt-2 text-sm leading-6 text-slate-600">Search, compare, and move to details with less visual noise across the main funnel.</p>
+            <p className="mt-2 text-sm leading-6 text-slate-600">Airport suggestions, results, and booking history now share the same client-side demo data flow.</p>
           </Card>
         </div>
       </section>

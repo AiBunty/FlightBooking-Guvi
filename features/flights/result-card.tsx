@@ -7,20 +7,9 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { formatCurrency } from "@/lib/utils";
 import { useMotionPreference } from "@/hooks/use-motion-preference";
+import type { DemoFlight } from "@/features/flights/demo-flight-data";
 
-type ResultFlight = {
-  id: string;
-  departureTime: string;
-  arrivalTime: string;
-  price: string | number;
-  currency: string;
-  seatsAvailable: number;
-  airline: { name: string; code: string };
-  origin: { code: string; city: string };
-  destination: { code: string; city: string };
-};
-
-export function ResultCard({ flight }: { flight: ResultFlight }) {
+export function ResultCard({ flight }: { flight: DemoFlight }) {
   const motionPref = useMotionPreference();
   const departure = new Date(flight.departureTime);
   const arrival = new Date(flight.arrivalTime);
@@ -43,7 +32,9 @@ export function ResultCard({ flight }: { flight: ResultFlight }) {
               </span>
               <div>
                 <p className="text-sm font-semibold text-slate-900">{flight.airline.name}</p>
-                <p className="text-xs text-slate-500">{flight.airline.code} | Economy saver</p>
+                <p className="text-xs text-slate-500">
+                  {flight.airline.code} | {flight.cabinClass.replaceAll("_", " ")}
+                </p>
               </div>
             </div>
             <div className="mt-4 flex items-center gap-2 text-xs font-semibold text-slate-500">
@@ -58,7 +49,7 @@ export function ResultCard({ flight }: { flight: ResultFlight }) {
                 <p className="text-3xl font-semibold tracking-tight text-slate-900">
                   {departure.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
                 </p>
-                <p className="mt-1 text-sm font-medium text-slate-500">{flight.origin.code}</p>
+                <p className="mt-1 text-sm font-medium text-slate-500">{flight.origin.iata}</p>
                 <p className="text-xs text-slate-400">{flight.origin.city}</p>
               </div>
               <div className="px-2">
@@ -82,7 +73,7 @@ export function ResultCard({ flight }: { flight: ResultFlight }) {
                 <p className="text-3xl font-semibold tracking-tight text-slate-900">
                   {arrival.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
                 </p>
-                <p className="mt-1 text-sm font-medium text-slate-500">{flight.destination.code}</p>
+                <p className="mt-1 text-sm font-medium text-slate-500">{flight.destination.iata}</p>
                 <p className="text-xs text-slate-400">{flight.destination.city}</p>
               </div>
             </div>
@@ -94,7 +85,7 @@ export function ResultCard({ flight }: { flight: ResultFlight }) {
             <p className="mt-1 text-xs text-slate-500">per traveller, taxes included</p>
             <Link href={`/flights/${flight.id}`}>
               <Button className="mt-4 w-full justify-center lg:w-auto">
-                View details
+                View demo details
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
@@ -104,9 +95,9 @@ export function ResultCard({ flight }: { flight: ResultFlight }) {
         <div className="flex flex-col gap-2 border-t border-slate-200/80 bg-white px-5 py-4 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between">
           <p className="flex items-center gap-2">
             <Clock3 className="h-4 w-4 text-orange-500" />
-            Clean timing-first layout for faster comparisons
+            Demo itinerary generated from airport distance and route timing
           </p>
-          <p className="font-medium text-slate-500">Route {flight.origin.code} to {flight.destination.code}</p>
+          <p className="font-medium text-slate-500">Route {flight.origin.iata} to {flight.destination.iata}</p>
         </div>
       </Card>
     </motion.div>
